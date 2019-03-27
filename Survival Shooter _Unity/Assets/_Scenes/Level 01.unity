@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 16
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -50,14 +50,14 @@ LightmapSettings:
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 10
-    m_AtlasSize: 1024
+    m_AtlasSize: 64
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -75,7 +75,7 @@ LightmapSettings:
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 256
-    m_PVRBounces: 4
+    m_PVRBounces: 1
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
@@ -999,6 +999,63 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 2766211449602034987}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &646720553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 646720557}
+  - component: {fileID: 646720556}
+  - component: {fileID: 646720554}
+  m_Layer: 0
+  m_Name: Optimization
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &646720554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646720553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17aef18bfcd50474a9d7d6619248d03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &646720556
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646720553}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 17.240208, y: 1, z: 19.053455}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &646720557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646720553}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 462077459}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &845565475 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 845565475, guid: d43cc378786fe0541b774b7394782942,
@@ -1098,6 +1155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 845565475}
   enemy: {fileID: 205297594, guid: c69f88e178313074c8d1bd5c1dd8a4da, type: 3}
+  enemyManager: {fileID: 910558487}
+  maxEnemyCount: 2
+  waitTime: 10
   spawnTime: 3
   spawnPoints:
   - {fileID: 2033636682}
@@ -1129,6 +1189,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 845565475}
   enemy: {fileID: 1669245449, guid: c7c8f40d3950cb0428ed5295c3641201, type: 3}
+  enemyManager: {fileID: 910558487}
+  maxEnemyCount: 2
+  waitTime: 10
   spawnTime: 10
   spawnPoints:
   - {fileID: 1691274956}
@@ -1146,6 +1209,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 845565475}
   enemy: {fileID: 1124267332, guid: 66f2053e09d83fc42af4c7d3504facbf, type: 3}
+  enemyManager: {fileID: 910558487}
+  maxEnemyCount: 2
+  waitTime: 10
   spawnTime: 5
   spawnPoints:
   - {fileID: 1751046457}

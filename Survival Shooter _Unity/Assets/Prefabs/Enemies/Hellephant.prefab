@@ -38,7 +38,7 @@ SkinnedMeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220438916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -195,8 +195,7 @@ AudioSource:
   m_GameObject: {fileID: 1669245449}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 8434b04884c414ac6b468e10945685e6,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fce027b40770a44298a6f5a4233bfb04, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -335,7 +334,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1
 --- !u!114 &1669245459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,7 +359,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd4165410163614cb994db6188ffdc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  light: {fileID: 0}
   recordTime: 5
+  rewindTimeSpeed: 0.5
+  lightEffectIntensity: 15
+  rewindVolume: 0
+  rewindPitch: 0
   playerHealth: {fileID: 845565475, guid: d43cc378786fe0541b774b7394782942, type: 3}
 --- !u!1 &1812468592
 GameObject:

@@ -9,10 +9,24 @@ public class EnemyManager : MonoBehaviour
     public float spawnTime = 3f;
     public Transform[] spawnPoints;
 
+	private int spawnCount;
+	private GameObject enemyManager;
 
-    void Start ()
+	private void Awake()
+	{
+		
+	}
+
+
+	void Start ()
     {
         InvokeRepeating ("Spawn", spawnTime, spawnTime);
+		SkinnedMeshRenderer sr = enemy.GetComponentInChildren<SkinnedMeshRenderer>();
+		sr.enabled = false;
+		if(sr == null)
+		{
+			Debug.LogWarning("Renderer not found");
+		}
     }
 
 
@@ -26,5 +40,6 @@ public class EnemyManager : MonoBehaviour
         int spawnPointIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
 
 		Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+		spawnCount++;
 	}
 }
