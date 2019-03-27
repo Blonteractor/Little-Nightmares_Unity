@@ -5,10 +5,14 @@ public class EnemyManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
     public GameObject enemy;
-
-    public float spawnTime = 3f;
+	
+	[Header("Wave Settings")]
+	public int increaseEnemyBy = 2;
 	public int maxEnemyCount = 3;
 	public int waitTime = 20;
+
+	public float spawnTime = 3f;
+	
     public Transform[] spawnPoints;
 
 	[HideInInspector] public int spawnCount;
@@ -28,6 +32,7 @@ public class EnemyManager : MonoBehaviour
 		{
 			spawnCount = 0;
 			flag = true;
+			maxEnemyCount += increaseEnemyBy;
 			InvokeRepeating("Spawn" , waitTime , spawnTime);
 		}
 	}
@@ -49,6 +54,9 @@ public class EnemyManager : MonoBehaviour
 
     void Spawn()
     {
+		isSpawning = true;
+		flag = false;
+
         if (playerHealth.currentHealth <= 0f)
         {
             return;
