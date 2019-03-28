@@ -13,21 +13,38 @@ public class HighScoreManager : MonoBehaviour
 
 	#endregion
 
+		
 	#region Unity callbacks
 	private void Awake()
 	{
 		highScoreText = GetComponent<Text>();
-		highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HigScore").ToString();
+		highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore").ToString();
 	}
 
 	private void Update()
 	{
-		if (ScoreManager.score >= PlayerPrefs.GetInt("HighSCore"))
+		if (ScoreManager.score >= PlayerPrefs.GetInt("HighScore"))
 		{
 			PlayerPrefs.SetInt("HighScore" , ScoreManager.score);
 			highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore");
 		}
+
+		if (Input.GetKeyDown(KeyCode.BackQuote))
+		{
+			ResetHighScore();
+		}
+
 	}
+	#endregion
+
+	#region Private Functions
+
+	void ResetHighScore()
+	{
+		PlayerPrefs.SetInt("HighScore" , 0);
+		highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore");
+	}
+
 	#endregion
 
 }
