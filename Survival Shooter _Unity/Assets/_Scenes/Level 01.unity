@@ -3021,11 +3021,6 @@ PrefabInstance:
       propertyPath: m_RenderingPath
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2766211449767044987, guid: 7759d5c934a52664b9fa2bc1ca139a7e,
-        type: 3}
-      propertyPath: m_ForceIntoRT
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2766211449767044986, guid: 7759d5c934a52664b9fa2bc1ca139a7e,
         type: 3}
       propertyPath: m_LocalPosition.x
