@@ -16,8 +16,9 @@ public class EnemyManager : MonoBehaviour
     public Transform[] spawnPoints;
 
 	[HideInInspector] public int spawnCount;
+
 	private GameObject enemyManager;
-	[SerializeField] private bool isSpawning;
+	private bool isSpawning;
 	private bool flag;
 
 	private void Awake()
@@ -45,9 +46,10 @@ public class EnemyManager : MonoBehaviour
 
 		SkinnedMeshRenderer sr = enemy.GetComponentInChildren<SkinnedMeshRenderer>();
 		sr.enabled = false;
+
 		if(sr == null)
 		{
-			Debug.LogWarning("Renderer not found");
+			return;
 		}
     }
 
@@ -65,8 +67,8 @@ public class EnemyManager : MonoBehaviour
         int spawnPointIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
 
 		Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+
 		spawnCount++;
-		Debug.Log(spawnCount);
 
 		if (spawnCount >= maxEnemyCount)
 		{
